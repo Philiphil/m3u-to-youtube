@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <input type="file" id="file" name="file" >
+    <input type="button" onclick="go(this)" value="GO">
+
+<script>
+function go(t){
+t.disabled = true;
+var file =  document.getElementById("file")
+var files = file.files[0]
+   var reader = new FileReader();
+   reader.addEventListener('load', function (e) {
+    console.debug(reader)
+    return;
+    google.script.run.withSuccessHandler(getResp).doList(reader.result)
+
+    });
+    
+    reader.readAsText(files);
+
+    
+    }
+    
+    function getResp(e){
+    t.disabled = false;
+   alert("done")
+    }
+    
+
+
+    </script>
+  </body>
+</html>
