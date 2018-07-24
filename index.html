@@ -5,7 +5,7 @@
   </head>
   <body>
     <input type="file" id="file" name="file" >
-    <input type="button" onclick="go(this)" value="GO">
+    <input type="button" onclick="go(this)" value="GO" id="gobtn">
 
 <script>
 function go(t){
@@ -24,7 +24,7 @@ var files = file.files[0]
     }
     
     function getResp(e){
-    t.disabled = false;
+    document.getElementById("gobtn").disabled = false;
    alert("done")
     }
     
