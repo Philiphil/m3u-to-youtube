@@ -14,8 +14,6 @@ var file =  document.getElementById("file")
 var files = file.files[0]
    var reader = new FileReader();
    reader.addEventListener('load', function (e) {
-    console.debug(reader)
-    return;
     google.script.run.withSuccessHandler(getResp).doList(reader.result)
 
     });
